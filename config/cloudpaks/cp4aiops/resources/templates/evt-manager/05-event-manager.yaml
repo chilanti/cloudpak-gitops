@@ -7,7 +7,7 @@ metadata:
     argocd.argoproj.io/sync-wave: "210"
   creationTimestamp: null
   name: evtmanager
-  namespace: "{{.Values.metadata.argocd_app_namespace}}-evt"
+  namespace: "{{.Values.metadata.argocd_app_namespace}}-emgr"
 spec:
   license:
     accept: true
@@ -35,7 +35,7 @@ spec:
     baseDN: 'dc=mycluster,dc=icp'
     storageSize: 1Gi
     serverType: CUSTOM
-    storageClass: ''
+    storageClass: {{.Values.storageclass.rwo}}
   backupRestore:
     enableAnalyticsBackups: false
   topology:
